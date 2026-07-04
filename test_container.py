@@ -1,5 +1,5 @@
-from core.container import ServiceContainer
-from core.logging import LoggerManager
+from core.framework.container import ServiceContainer
+from core.framework.logging import LoggerManager
 
 container = ServiceContainer()
 

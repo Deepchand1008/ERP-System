@@ -1,3 +1,4 @@
+from .context import ApplicationContext
 from .environment import Environment
 from .metadata import ApplicationInfo
 from .paths import ApplicationPaths
@@ -8,4 +9,5 @@ __all__ = [
     "ApplicationPaths",
     "ApplicationRuntime",
     "Environment",
+    "ApplicationContext",
 ]
