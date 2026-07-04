@@ -1,0 +1,51 @@
+```gitignore
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+.venv/
+
+# Environment
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# SQLite
+*.db
+
+# Build
+build/
+dist/
+
+# PyInstaller
+*.spec
+
+# macOS
+.DS_Store
+
+# Linux
+*.swp
+
+# Testing
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Coverage
+.coverage
+
+# Temporary
+storage/temp/*
+storage/cache/*
+```
