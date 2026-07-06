@@ -37,19 +37,21 @@ class ApplicationHost:
 
     def start(self) -> int:
         """
-        Start ERP application.
+        Start the ERP application.
         """
 
+        # Initialize framework
         self._context = Bootstrap.initialize()
 
+        # Create Qt Application
         self._app = QApplication(sys.argv)
 
-        #
-        # Next Steps
-        #
-        # ThemeManager
-        # SplashScreen
-        # MainWindow
-        #
+        # Import here to avoid circular imports
+        from modules.shell.main_window import MainWindow
 
+        # Create main window
+        window = MainWindow()
+        window.show()
+
+        # Start event loop
         return self._app.exec()
