@@ -1,7 +1,7 @@
 """
 Application Host.
 
-Responsible for starting the ERP application.
+Owns the lifecycle of the ERP application.
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ from core.framework.bootstrap import Bootstrap
 
 class ApplicationHost:
     """
-    Controls the lifetime of the ERP application.
+    Starts and manages the ERP application.
     """
 
     def __init__(self) -> None:
@@ -26,18 +26,18 @@ class ApplicationHost:
     @property
     def app(self) -> QApplication:
         if self._app is None:
-            raise RuntimeError("Application has not been created.")
+            raise RuntimeError("QApplication is not initialized.")
         return self._app
 
     @property
     def context(self) -> ApplicationContext:
         if self._context is None:
-            raise RuntimeError("Application context is not initialized.")
+            raise RuntimeError("Application Context is not initialized.")
         return self._context
 
     def start(self) -> int:
         """
-        Start the application.
+        Start ERP application.
         """
 
         self._context = Bootstrap.initialize()
@@ -45,11 +45,11 @@ class ApplicationHost:
         self._app = QApplication(sys.argv)
 
         #
-        # Next Phase:
-        # Theme Engine
-        # Font Loader
-        # Splash Screen
-        # Main Window
+        # Next Steps
+        #
+        # ThemeManager
+        # SplashScreen
+        # MainWindow
         #
 
         return self._app.exec()
